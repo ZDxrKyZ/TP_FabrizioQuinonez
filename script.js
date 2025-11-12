@@ -1,3 +1,5 @@
+// script.js
+
 function bienvenidaPagina1() {
     const nombre = prompt("Por favor, ingresa tu nombre:");
     const apellido = prompt("Ahora ingresa tu apellido:");
@@ -30,6 +32,7 @@ function bienvenidaPagina2() {
         localStorage.setItem("edad", edad);
     }
 
+    // ✅ Lista de comidas típicas paraguayas
     const comidas = [
         { nombre: "Sopa Paraguaya", img: "https://img-global.cpcdn.com/recipes/c31c8e6b6c93dbc5/680x781cq80/sopa-paraguaya-paraguay-foto-principal.jpg" },
         { nombre: "Chipa", img: "https://www.mspbs.gov.py/dependencias/portal/fotos/da201c-ChipaAlmidon.jpg" },
@@ -38,11 +41,25 @@ function bienvenidaPagina2() {
         { nombre: "Asado", img: "https://infonegocios.info/content/images/2022/07/22/238016/conversions/costilla-cortepreferido-paraguayos-infoganaderia-medium-size.jpg" }
     ];
 
+    // ✅ Inserta las imágenes en el contenedor
     const galeria = document.getElementById("galeria");
+
+    // Limpia el contenido anterior si hubiera algo
+    galeria.innerHTML = "";
+
     comidas.forEach(comida => {
         const div = document.createElement("div");
-        div.className = "item-galeria";
-        div.innerHTML = `<img src="${comida.img}" alt="${comida.nombre}"><p>${comida.nombre}</p>`;
+        div.classList.add("item-galeria");
+
+        const img = document.createElement("img");
+        img.src = comida.img;
+        img.alt = comida.nombre;
+
+        const p = document.createElement("p");
+        p.textContent = comida.nombre;
+
+        div.appendChild(img);
+        div.appendChild(p);
         galeria.appendChild(div);
     });
 }
@@ -73,4 +90,5 @@ function resta() {
     const b = parseFloat(prompt("Ingresa el segundo número:"));
     alert(`El resultado de ${a} - ${b} = ${a - b}`);
 }
+
 

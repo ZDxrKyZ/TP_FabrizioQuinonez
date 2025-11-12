@@ -13,17 +13,29 @@ function bienvenidaPagina1() {
 
 function bienvenidaPagina2() {
     const saludoPersona = document.getElementById("saludoPersona");
+    const edadMensaje = document.getElementById("edadMensaje");
     const nombreCompleto = localStorage.getItem("usuario");
+
     if (nombreCompleto) {
-        saludoPersona.textContent = `Hola nuevamente, ${nombreCompleto}. ¡Disfruta de la galería!`;
+        saludoPersona.textContent = `Hola ${nombreCompleto}, ¡bienvenido a la galería!`;
+    }
+
+    const edad = parseInt(prompt("¿Cuántos años tienes?"));
+    if (!isNaN(edad)) {
+        if (edad >= 20) {
+            edadMensaje.textContent = `Tienes ${edad} años, eres mayor de 20. ¡Qué madurez!`;
+        } else {
+            edadMensaje.textContent = `Tienes ${edad} años, ¡eres muy joven!`;
+        }
+        localStorage.setItem("edad", edad);
     }
 
     const comidas = [
-        { nombre: "Sopa Paraguaya", img: "https://frigomas.com.py/wp-content/uploads/2023/08/1569260624-muestra.jpg" },
-        { nombre: "Chipa", img: "https://www.mspbs.gov.py/dependencias/portal/fotos/da201c-ChipaAlmidon.jpg" },
-        { nombre: "Mbeju", img: "https://produsur.com.py/wp-content/uploads/2022/06/Mbeju-tradicional.jpg" },
-        { nombre: "Vori Vori", img: "https://cocinarica.com.py/img/cocina-paraguaya/vori-vori-gallina-secundaria.jpg" },
-        { nombre: "Asado", img: "https://infonegocios.info/content/images/2022/07/22/238016/conversions/costilla-cortepreferido-paraguayos-infoganaderia-medium-size.jpg" }
+        { nombre: "Sopa Paraguaya", img: "https://upload.wikimedia.org/wikipedia/commons/5/59/Sopa_paraguaya.jpg" },
+        { nombre: "Chipa", img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Chipas.jpg" },
+        { nombre: "Mbeju", img: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Mbeyu.jpg" },
+        { nombre: "Vori Vori", img: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Vori_vori.jpg" },
+        { nombre: "Asado", img: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asado_Paraguayo.jpg" }
     ];
 
     const galeria = document.getElementById("galeria");
@@ -37,11 +49,14 @@ function bienvenidaPagina2() {
 
 function bienvenidaPagina3() {
     const nombreCompleto = localStorage.getItem("usuario");
+    const edad = localStorage.getItem("edad");
+
     if (nombreCompleto) {
-        alert(`Hola ${nombreCompleto}, bienvenido a la página de operaciones matemáticas.`);
+        alert(`Hola ${nombreCompleto}, bienvenido a la página de operaciones matemáticas.${edad ? " Tienes " + edad + " años." : ""}`);
     }
 }
 
+// === FUNCIONES MATEMÁTICAS ===
 function multiplicacion() {
     const a = parseFloat(prompt("Ingresa el primer número:"));
     const b = parseFloat(prompt("Ingresa el segundo número:"));
@@ -58,3 +73,4 @@ function resta() {
     const b = parseFloat(prompt("Ingresa el segundo número:"));
     alert(`El resultado de ${a} - ${b} = ${a - b}`);
 }
+

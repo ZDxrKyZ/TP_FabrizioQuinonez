@@ -31,11 +31,11 @@ function bienvenidaPagina2() {
     }
 
     const comidas = [
-        { nombre: "Sopa Paraguaya", img: "https://upload.wikimedia.org/wikipedia/commons/5/59/Sopa_paraguaya.jpg" },
-        { nombre: "Chipa", img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Chipas.jpg" },
-        { nombre: "Mbeju", img: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Mbeyu.jpg" },
-        { nombre: "Vori Vori", img: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Vori_vori.jpg" },
-        { nombre: "Asado", img: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Asado_Paraguayo.jpg" }
+        { nombre: "Sopa Paraguaya", img: "https://img-global.cpcdn.com/recipes/c31c8e6b6c93dbc5/680x781cq80/sopa-paraguaya-paraguay-foto-principal.jpg" },
+        { nombre: "Chipa", img: "https://www.mspbs.gov.py/dependencias/portal/fotos/da201c-ChipaAlmidon.jpg" },
+        { nombre: "Mbeju", img: "https://produsur.com.py/wp-content/uploads/2022/06/Mbeju-tradicional.jpg" },
+        { nombre: "Vori Vori", img: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Vor%C3%AD_vor%C3%AD_paraguay.jpg" },
+        { nombre: "Asado", img: "https://infonegocios.info/content/images/2022/07/22/238016/conversions/costilla-cortepreferido-paraguayos-infoganaderia-medium-size.jpg" }
     ];
 
     const galeria = document.getElementById("galeria");
